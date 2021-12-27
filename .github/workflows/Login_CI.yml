@@ -34,7 +34,7 @@ jobs:
     needs: [Continuous-integration]
     runs-on: ubuntu-latest
     env:
-      Repo: /home/runner/work/Login/Login
+      Repo: /home/runner/work/Login/Login/Login
       DockerImageName: bakayarusama/login:latest
 
     steps:
