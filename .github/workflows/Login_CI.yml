@@ -46,7 +46,7 @@ jobs:
              -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
     - name: Build Docker image
-      working-directory: /home/runner/work/Login/Login
+      working-directory: /home/runner/work/Login/Login/Login
       run: docker build -t $DockerImageName $Repo
 
     - name: Publish Docker image
