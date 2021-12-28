@@ -368,3 +368,4 @@ FodyWeavers.xsd
 /Login/login.db-wal
 /Login/login.db-shm
 /Login/appsettings.Development.json
+/Login/Data/Database
