@@ -54,4 +54,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+app.UseIdentityServer();
+
 app.Run();
