@@ -1,4 +1,5 @@
 ﻿using IdentityServer4.EntityFramework.DbContexts;
+using Login.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Login.Extensions
@@ -11,6 +12,7 @@ namespace Login.Extensions
 
             serviceScope?.ServiceProvider.GetRequiredService<PersistedGrantDbContext>().Database.Migrate();
             serviceScope?.ServiceProvider.GetRequiredService<ConfigurationDbContext>().Database.Migrate();
+            serviceScope?.ServiceProvider.GetRequiredService<LoginDbContext>().Database.Migrate();
         }
     }
 }
