@@ -1,5 +1,4 @@
-﻿using Login.Areas.Identity.Data;
-using Login.Data;
+﻿using Login.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;

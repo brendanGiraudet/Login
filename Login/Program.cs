@@ -1,6 +1,15 @@
 using Login.Extensions;
+using Login.Services;
+using Login.Settings;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add options
+builder.Services.Configure<SendGridSettings>(builder.Configuration.GetSection("SendGrid"));
+
+// Add service
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
