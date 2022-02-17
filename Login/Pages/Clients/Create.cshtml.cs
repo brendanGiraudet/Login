@@ -3,31 +3,26 @@ using IdentityServer4.EntityFramework.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Login.Pages.Clients
+namespace Login.Pages.Clients;
+
+public class CreateModel : PageModel
 {
-    public class CreateModel : PageModel
+    private readonly ConfigurationDbContext _configurationDbContext;
+
+    public CreateModel(ConfigurationDbContext configurationDbContext)
     {
-        private readonly ConfigurationDbContext _configurationDbContext;
+        _configurationDbContext = configurationDbContext;
+    }
 
-        [BindProperty]
-        public Client Client { get; set; } = new Client();
+    [BindProperty] public Client Client { get; set; } = new();
 
-        public CreateModel(ConfigurationDbContext configurationDbContext)
-        {
-            _configurationDbContext = configurationDbContext;
-        }
+    public async Task<IActionResult> OnPostAsync()
+    {
+        if (!ModelState.IsValid) return Page();
 
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+        _configurationDbContext.Clients.Add(Client);
+        await _configurationDbContext.SaveChangesAsync();
 
-            _configurationDbContext.Clients.Add(Client);
-            await _configurationDbContext.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
-        }
+        return RedirectToPage("./Index");
     }
 }

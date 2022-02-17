@@ -1,0 +1,18 @@
+﻿.container .container-header { margin: 1rem; }
+
+.container .container-header ul {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+}
+
+.container .container-header ul li a { color: #555555; }
+
+.container .container-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .container-body section { width: 100%; }

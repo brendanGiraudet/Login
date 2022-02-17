@@ -5,28 +5,28 @@
 <h1>Create</h1>
 
 <h4>Movie</h4>
-<hr />
+<hr/>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Client.Id" class="control-label"></label>
-                <input asp-for="Client.Id" class="form-control" />
+                <input asp-for="Client.Id" class="form-control"/>
                 <span asp-validation-for="Client.Id" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Client.ClientName" class="control-label"></label>
-                <input asp-for="Client.ClientName" class="form-control" />
+                <input asp-for="Client.ClientName" class="form-control"/>
                 <span asp-validation-for="Client.ClientName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Client.ClientId" class="control-label"></label>
-                <input asp-for="Client.ClientId" class="form-control" />
+                <input asp-for="Client.ClientId" class="form-control"/>
                 <span asp-validation-for="Client.ClientId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary"/>
             </div>
         </form>
     </div>
