@@ -16,17 +16,17 @@
     <form id="account" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div>
-            <input autocomplete="username" type="email" id="Input_Email" name="Input.Email" placeholder="Email">
+            <input autocomplete="username" type="email" id="Input_Email" name="Input.Email" placeholder="Email" />
             <span asp-validation-for="Input.Email" class="text-danger"></span>
         </div>
         <div>
-            <input autocomplete="current-password" type="password" id="Input_Password" name="Input.Password" placeholder="Password">
+            <input autocomplete="current-password" type="password" id="Input_Password" name="Input.Password" placeholder="Password" />
             <span asp-validation-for="Input.Password" class="text-danger"></span>
         </div>
         <div>
             <div class="checkbox">
                 <label asp-for="Input.RememberMe" class="form-label">
-                    <input type="checkbox" id="Input_RememberMe" name="Input.RememberMe">
+                    <input type="checkbox" id="Input_RememberMe" name="Input.RememberMe" />
                     @Html.DisplayNameFor(m => m.Input.RememberMe)
                 </label>
             </div>
