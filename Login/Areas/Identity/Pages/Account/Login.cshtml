@@ -26,16 +26,13 @@
         <div>
             <div class="checkbox">
                 <label asp-for="Input.RememberMe" class="form-label">
-                    <input class="form-check-input" asp-for="Input.RememberMe"/>
+                    <input type="checkbox" id="Input_RememberMe" name="Input.RememberMe">
                     @Html.DisplayNameFor(m => m.Input.RememberMe)
                 </label>
             </div>
         </div>
         <div>
             <button id="login-submit" type="submit" >Log in</button>
-        </div>
-        <div>
-            <button type="button" href="./ForgotPassword">Forgot your password?</button>
         </div>
     </form>
 </section>
