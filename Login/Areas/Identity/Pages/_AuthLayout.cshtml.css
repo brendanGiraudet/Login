@@ -11,8 +11,13 @@
 
         .container .container-header ul li a {
             color: #555555;
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
+
+            .container .container-header ul li a.actif {
+                font-size: 2rem;
+                padding: 0;
+            }
 
 .container .container-body {
     display: flex;
@@ -23,3 +28,9 @@
     .container .container-body section {
         width: 100%;
     }
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}

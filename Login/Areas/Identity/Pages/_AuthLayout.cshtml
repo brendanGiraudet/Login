@@ -1,50 +1,40 @@
-﻿@{
-    Layout = "/Pages/Shared/_Layout.cshtml";
-}
-@*
-    <div class="row">
-    <div class="col-md-6 offset-md-3">
-    <div class="card login-logout-tab">
-
-    <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-    <li class="nav-item">
-    <a class="nav-link" = href="/Identity/Account/Login">Sign In</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" = href="/Identity/Account/Register">Sign up</a>
-    </li>
-    </ul>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Login.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <div class="container-header">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link @(Context.Request.Path.Equals("/Identity/Account/Login") ? "actif" : "")" href="/Identity/Account/Login">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  @(Context.Request.Path.Equals("/Identity/Account/Register") ? "actif" : "")" href="/Identity/Account/Register">Sign up</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-body">
+            @RenderBody()
+        </div>
     </div>
 
-    <div class="card-content">
-    <div class="row">
-    <div class="col-md-12">
-    @RenderBody()
-    </div>
-    </div>
-    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Bakayarusama Login - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
 
-    </div>
-    </div>
-    </div>
-*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-
-<div class="container">
-    <div class="container-header">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/Identity/Account/Login">Sign In</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Identity/Account/Register">Sign up</a>
-            </li>
-        </ul>
-    </div>
-    <div class="container-body">
-        @RenderBody()
-    </div>
-</div>
-
-@await RenderSectionAsync("Scripts", false)
+    @await RenderSectionAsync("Scripts", false)
+</body>
+</html>
