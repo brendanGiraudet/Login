@@ -16,11 +16,11 @@
     <form id="account" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div>
-            <input autocomplete="username" aria-required="true" type="email" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Input_Email" name="Input.Email" placeholder="Email">
+            <input autocomplete="username" type="email" id="Input_Email" name="Input.Email" placeholder="Email">
             <span asp-validation-for="Input.Email" class="text-danger"></span>
         </div>
         <div>
-            <input autocomplete="current-password" aria-required="true" type="password" data-val="true" data-val-required="The Password field is required." id="Input_Password" name="Input.Password" placeholder="Password">
+            <input autocomplete="current-password" type="password" id="Input_Password" name="Input.Password" placeholder="Password">
             <span asp-validation-for="Input.Password" class="text-danger"></span>
         </div>
         <div>
@@ -32,18 +32,10 @@
             </div>
         </div>
         <div>
-            <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+            <button id="login-submit" type="submit" >Log in</button>
         </div>
         <div>
-            <p>
-                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-            </p>
-            <p>
-                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-            </p>
-            <p>
-                <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-            </p>
+            <button type="button" href="./ForgotPassword">Forgot your password?</button>
         </div>
     </form>
 </section>
