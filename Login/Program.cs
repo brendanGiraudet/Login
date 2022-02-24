@@ -10,9 +10,11 @@ builder.Services.Configure<SendGridSettings>(builder.Configuration.GetSection("S
 
 // Add service
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.AddTransient<ILogger, Logger>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddAuthentication();
 
 // Add Identity server configuration, context etc
 builder.Services.AddIdentityServerConfiguration(builder.Configuration);

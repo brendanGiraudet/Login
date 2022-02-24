@@ -17,7 +17,11 @@ public static class ServiceCollectionExtensions
         var migrationsAssembly = typeof(Program).GetTypeInfo().Assembly.GetName().Name;
 
         // configure identity server with in-memory stores, keys, clients and scopes
-        services.AddIdentityServer()
+        services.AddIdentityServer(options => 
+        options.UserInteraction = new IdentityServer4.Configuration.UserInteractionOptions()
+        {
+            LoginUrl = "/Identity/Account/Login"
+        })
 #if DEBUG
             .AddDeveloperSigningCredential()
 #endif
