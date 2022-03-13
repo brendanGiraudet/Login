@@ -369,3 +369,5 @@ FodyWeavers.xsd
 /Login/login.db-shm
 /Login/appsettings.Development.json
 /Login/Data/Database
+Login/wwwroot/localhost.crt
+Login/wwwroot/localhost.key

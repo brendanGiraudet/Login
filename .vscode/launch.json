@@ -22,7 +22,9 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
-                "ASPNETCORE_URLS": "https://localhost:5010"
+                "ASPNETCORE_URLS": "https://localhost:5010",
+                "ASPNETCORE_Kestrel__Certificates__Default__KeyPath": "/home/baka/Documents/project/Login/Login/wwwroot/localhost.key",
+                "ASPNETCORE_Kestrel__Certificates__Default__Path": "/home/baka/Documents/project/Login/Login/wwwroot/localhost.crt"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

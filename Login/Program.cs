@@ -17,7 +17,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddAuthentication();
 
 // Add Identity server configuration, context etc
-builder.Services.AddIdentityServerConfiguration(builder.Configuration);
+builder.Services.AddIdentityServerConfiguration(builder.Configuration, builder.Environment);
 
 var app = builder.Build();
 
