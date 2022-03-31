@@ -1,7 +1,5 @@
 using Login.Extensions;
-using Login.Services;
 using Login.Settings;
-using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<SendGridSettings>(builder.Configuration.GetSection("SendGrid"));
 
 // Add service
-builder.Services.AddTransient<IEmailSender, EmailSender>();
-builder.Services.AddTransient<ILogger, Logger>();
+builder.Services.AddServices();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -36,9 +33,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthorization();
-app.UseAuthentication();
 
 app.MapRazorPages();
 

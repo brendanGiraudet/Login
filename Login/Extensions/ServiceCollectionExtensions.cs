@@ -2,6 +2,8 @@
 using Login.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Login.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace Login.Extensions;
 
@@ -12,6 +14,7 @@ public static class ServiceCollectionExtensions
         var connectionString = configuration.GetConnectionString("Login");
         services.AddDbContext<LoginDbContext>(options =>
             options.UseSqlite(connectionString));
+
         services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<LoginDbContext>();
         var migrationsAssembly = typeof(Program).GetTypeInfo().Assembly.GetName().Name;
@@ -20,7 +23,8 @@ public static class ServiceCollectionExtensions
         services.AddIdentityServer(options =>
             options.UserInteraction = new IdentityServer4.Configuration.UserInteractionOptions()
             {
-                LoginUrl = "/Identity/Account/Login"
+                LoginUrl = "/Identity/Account/Login",
+                LogoutUrl = "/Identity/Account/Logout"
             }
         )
 
@@ -47,5 +51,11 @@ public static class ServiceCollectionExtensions
            options.EnableTokenCleanup = true;
            options.TokenCleanupInterval = 30;
        });
+    }
+
+    public static void AddServices(this IServiceCollection services)
+    {
+        services.AddTransient<IEmailSender, EmailSender>();
+        services.AddTransient<ILogger, Logger>();
     }
 }

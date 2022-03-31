@@ -1,0 +1,38 @@
+@page
+@model Login.Areas.Identity.Pages.Administration.IdentityRessources
+@{
+    ViewData["Title"] = "IdentityRessources";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    @if (!Model.IdentityResources.Any())
+    {
+        <span>Vide</span>
+    }
+    else
+    {
+        <table>
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Enable</td>
+                    <td>Name</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var identityRessource in Model.IdentityResources)
+                {
+                    <tr>
+                        <td>@identityRessource.Id</td>
+                        <td>@identityRessource.Enabled</td>
+                        <td>@identityRessource.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+
+</div>
