@@ -11,11 +11,11 @@ Permit to login into my application in SSO
 Run dotnet watch
 
 # Contribute 
-Create feature branch
-Code
-Create Unit test
-Commit and merge into master
-Push to origin
+- Create feature branch 
+- Code 
+- Create Unit test 
+- Commit and merge into master 
+- Push to origin
 
 # Deployment
 Push master into origin permit to run CICD
